@@ -3,10 +3,10 @@ export enum OrganizationType {
   CV_ONLY = 'CV_ONLY',
 }
 
-export interface OrganizationStats {
+/* ---------- Base Organization ---------- */
+interface BaseOrganizationStats {
   id: string;
   name: string;
-  type: OrganizationType;
   total: number;
   cvOnlyCount: number | null;
   pending: number;
@@ -15,6 +15,23 @@ export interface OrganizationStats {
   rejected: number;
 }
 
+/* ---------- CV ONLY ORGANIZATION ---------- */
+export interface CvOnlyOrganizationStats extends BaseOrganizationStats {
+  type: OrganizationType.CV_ONLY;
+  cvUrl: string;
+}
+
+/* ---------- COMPANY (FULL FORM) ---------- */
+export interface CompanyOrganizationStats extends BaseOrganizationStats {
+  type: OrganizationType.COMPANY;
+}
+
+/* ---------- UNION ---------- */
+export type OrganizationStats =
+  | CvOnlyOrganizationStats
+  | CompanyOrganizationStats;
+
+/* ---------- USER APPLICATION ---------- */
 export interface UserApplication {
   id: string;
   name: string;
@@ -24,7 +41,7 @@ export interface UserApplication {
   appliedDate: string;
   status: 'Pending' | 'Reviewed' | 'Shortlisted' | 'Rejected';
   hasCV: boolean;
-  cvUrl?: string;
   applicationtype: 'CV_ONLY' | 'FULL_FORM';
+  cvUrl?: string;
   img?: string;
 }

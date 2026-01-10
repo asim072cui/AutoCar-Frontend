@@ -14,7 +14,7 @@ const Choosesection = () => {
           Why Choose Us?
         </h2>
         <h3 className="lg:text-xl text-lg font-semibold text-red-600 text-center lg:text-left mt-2">
-          We're here when you need us
+          We are  here when you need us
         </h3>
       </div>
 

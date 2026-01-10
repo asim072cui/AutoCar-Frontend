@@ -31,7 +31,7 @@ const Herosection = () => {
       <div className="min-h-screen bg-[url('/image/contactus.png')] bg-center bg-cover flex flex-col lg:justify-center lg:items-center lg:text-center lg:px-20 px-5 py-10 lg:py-0">
         <div className="text-center mb-10 mt-20 sm:mt-0">
           <h1 className="text-3xl sm:text-7xl font-bold text-white lg:mb-5">
-            Let's Get <span className="text-red-600">Connected</span>
+            Let Get <span className="text-red-600">Connected</span>
           </h1>
         </div>
       </div>
@@ -95,7 +95,7 @@ const Herosection = () => {
                 </div>
                 <div className="flex flex-col gap-1">
                   <p className="font-bold">Address</p>
-                  <p>1271 Gladstone Rd, Nassau, Bahamas</p>
+                  <p>1271 Gladstone Rd  Nassau Bahamas</p>
                 </div>
               </div>
 

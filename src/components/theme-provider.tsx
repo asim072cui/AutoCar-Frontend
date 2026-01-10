@@ -1,10 +1,12 @@
 "use client";
 
+import React from "react";
 import { Provider } from "jotai";
 import { siteConfig } from "@/config/site.config";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
-
-export function ThemeProvider({ children }: React.PropsWithChildren<{}>) {
+export function ThemeProvider({
+  children,
+}: React.PropsWithChildren) {
   return (
     <NextThemeProvider
       enableSystem={false}
@@ -14,7 +16,8 @@ export function ThemeProvider({ children }: React.PropsWithChildren<{}>) {
     </NextThemeProvider>
   );
 }
-
-export function JotaiProvider({ children }: React.PropsWithChildren<{}>) {
+export function JotaiProvider({
+  children,
+}: React.PropsWithChildren) {
   return <Provider>{children}</Provider>;
 }

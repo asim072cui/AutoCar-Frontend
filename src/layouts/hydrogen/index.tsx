@@ -10,7 +10,7 @@ import {
 } from "@tanstack/react-table";
 
 const UsersTable = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<any[]>([]);
   const [totalUsers, setTotalUsers] = useState(0);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const UsersTable = () => {
 
   const table = useReactTable({
     data: users,
-    columns: defaultColumns, // using your custom columns
+    columns: defaultColumns(), // using your custom columns
     getCoreRowModel: getCoreRowModel(),
   });
 
@@ -61,9 +61,9 @@ const UsersTable = () => {
                     {header.isPlaceholder
                       ? null
                       : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                   </th>
                 ))}
               </tr>

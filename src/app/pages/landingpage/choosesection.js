@@ -5,7 +5,7 @@ const Choosesection = () => {
         <>
         <div className="bg-[#303030] text-center lg:pt-13 pt-5 ">
             <h1 className="lg:text-4xl text-2xl text-center text-white">Why Choose Us?</h1>
-           <p className="text-sm text-red-600 lg:text-lg text-center mt-3">We're  her for whatever you need</p>
+           <p className="text-sm text-red-600 lg:text-lg text-center mt-3">We are  her for whatever you need</p>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:mt-10 mt-8 lg:px-4 ">
        {cardsection.map((item, index) => (
     <div

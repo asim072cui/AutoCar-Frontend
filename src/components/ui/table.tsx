@@ -78,7 +78,7 @@ export default function Table({
 }: TableProps) {
   return (
     <RcTable
-    onRow={(data: any, index: any) => {
+    onRow={(data: unknown, index: unknown) => {
       return {
         onClick: () => {
           console.log('Row clicked', data, index);
@@ -95,7 +95,7 @@ export default function Table({
       };
     }}
        
-    // onRow={(data: any, index: any) => {
+    // onRow={(data: unknown, index: any) => {
     //   console.log(data, 'row data');
     //   return {
     //     onClick: () => {
@@ -221,14 +221,14 @@ export function HeaderCell({
   );
 }
 
-type ToggleColumnsTypes<T> = {
+type ToggleColumnsTypes<T extends { dataIndex: string }> = {
   columns?: T[];
   checkedColumns?: string[];
   setCheckedColumns?: React.Dispatch<React.SetStateAction<string[]>>;
   hideIndex?: number;
 };
 
-export function ToggleColumns<T>({
+export function ToggleColumns<T extends { dataIndex: string }>({
   columns,
   checkedColumns,
   setCheckedColumns,
@@ -252,7 +252,7 @@ export function ToggleColumns<T>({
               setValues={setCheckedColumns ? setCheckedColumns : () => {}}
               className="grid grid-cols-2 gap-x-6 gap-y-5 px-1.5 pb-3.5 pt-4"
             >
-              {columns?.map((column: any, index) => (
+              {columns?.map((column, index) => (
                 <Checkbox
                   key={column.dataIndex}
                   value={column.dataIndex}

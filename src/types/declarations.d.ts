@@ -81,7 +81,7 @@ declare module '@/components/controlled-table' {
     showLoadingText?: boolean;
     filterElement?: ReactNode;
     filterOptions?: ReactNode;
-    data: any[];
+    data: unknown[];
     columns: any[];
     paginatorOptions?: {
       pageSize: number;

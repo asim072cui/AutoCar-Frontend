@@ -2,12 +2,15 @@
 
 import { Provider } from "jotai";
 import { siteConfig } from "@/config/site.config";
-// import hideRechartsConsoleError from "@core/utils/recharts-console-error";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
+import React from "react";
 
-// hideRechartsConsoleError();
-
-export function ThemeProvider({ children }: React.PropsWithChildren<{}>) {
+/* ======================
+   THEME PROVIDER
+====================== */
+export function ThemeProvider({
+  children,
+}: React.PropsWithChildren) {
   return (
     <NextThemeProvider
       enableSystem={false}
@@ -18,6 +21,11 @@ export function ThemeProvider({ children }: React.PropsWithChildren<{}>) {
   );
 }
 
-export function JotaiProvider({ children }: React.PropsWithChildren<{}>) {
+/* ======================
+   JOTAI PROVIDER
+====================== */
+export function JotaiProvider({
+  children,
+}: React.PropsWithChildren) {
   return <Provider>{children}</Provider>;
 }

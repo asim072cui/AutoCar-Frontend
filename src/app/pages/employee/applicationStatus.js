@@ -35,7 +35,7 @@ const ApplicationStatus = () => {
             if (response.total === 0) {
                 setMessage({ 
                     type: "info", 
-                    text: "You haven't submitted any employment applications yet." 
+                    text: "You haven submitted any employment applications yet." 
                 });
             }
         } catch (error) {
@@ -356,7 +356,7 @@ const ApplicationStatus = () => {
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                             </svg>
                                                             <div>
-                                                                <p className="text-sm font-medium text-gray-600">Your CV/Resume</p>
+                                                                <p className="text-sm font-medium text-gray-600">Your CV</p>
                                                                 <p className="text-xs text-gray-500">View or download your submitted document</p>
                                                             </div>
                                                         </div>
@@ -439,7 +439,7 @@ const ApplicationStatus = () => {
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-3">No Applications Found</h3>
                             <p className="text-gray-600 mb-8">
-                                You haven't submitted any employment applications yet. Start your career journey with us today!
+                                You havent submitted any employment applications yet. Start your career journey with us today!
                             </p>
                             <a
                                 href="/job-portal"
@@ -465,7 +465,7 @@ const ApplicationStatus = () => {
                                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Need Help?</h4>
                                 <p className="text-gray-600 text-sm leading-relaxed">
                                     If you have any questions about your application status or need assistance, 
-                                    please don't hesitate to contact our HR department at <a href="mailto:hr@autocar.com" className="text-blue-600 hover:underline font-medium">hr@autocar.com</a> or 
+                                    please don hesitate to contact our HR department at <a href="mailto:hr@autocar.com" className="text-blue-600 hover:underline font-medium">hr@autocar.com</a> or 
                                     call us at <span className="font-medium">+1 (555) 123-4567</span>.
                                 </p>
                             </div>

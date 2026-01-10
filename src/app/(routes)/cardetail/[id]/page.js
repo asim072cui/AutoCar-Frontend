@@ -18,6 +18,9 @@ import { useRouter } from 'next/navigation';
 import toast, { Toaster } from 'react-hot-toast';
 import { set } from 'date-fns';
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
 const CarDetail = () => {
  const [showContactModal, setShowContactModal] = useState();
  const [ contactFormData, setContactFormData]= useState({

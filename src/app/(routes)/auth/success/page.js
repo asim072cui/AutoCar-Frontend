@@ -1,11 +1,14 @@
 "use client";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
-export default function AuthSuccessPage() {
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
+function AuthSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -80,5 +83,13 @@ export default function AuthSuccessPage() {
         </div>
       </motion.div>
     </div>
+  );
+}
+
+export default function AuthSuccessPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AuthSuccessContent />
+    </Suspense>
   );
 }

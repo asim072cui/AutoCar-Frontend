@@ -1,20 +1,51 @@
 'use client';
-import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import L from "leaflet";
+import React, { useState, useEffect } from "react";
+import dynamic from 'next/dynamic';
 
-const businessIcon = new L.Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
-  iconSize: [40, 40],
-});
+// Dynamically import map components to avoid SSR issues
+const MapContainer = dynamic(
+  () => import('react-leaflet').then((mod) => mod.MapContainer),
+  { ssr: false }
+);
+const TileLayer = dynamic(
+  () => import('react-leaflet').then((mod) => mod.TileLayer),
+  { ssr: false }
+);
+const Marker = dynamic(
+  () => import('react-leaflet').then((mod) => mod.Marker),
+  { ssr: false }
+);
+const Popup = dynamic(
+  () => import('react-leaflet').then((mod) => mod.Popup),
+  { ssr: false }
+);
+const useMapHook = dynamic(
+  () => import('react-leaflet').then((mod) => mod.useMap),
+  { ssr: false }
+);
 
-const userIcon = new L.Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/149/149060.png",
-  iconSize: [35, 35],
-});
+let L;
+let businessIcon;
+let userIcon;
+
+// Initialize Leaflet icons only on client side
+if (typeof window !== 'undefined') {
+  L = require('leaflet');
+  businessIcon = new L.Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+    iconSize: [40, 40],
+  });
+  
+  userIcon = new L.Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/149/149060.png",
+    iconSize: [35, 35],
+  });
+}
 
 // Separate button component for location
 function LocationButton({ setUserPosition, userPosition }) {
+  // Import useMap from react-leaflet dynamically
+  const { useMap } = require('react-leaflet');
   const map = useMap();
 
   const handleClick = () => {

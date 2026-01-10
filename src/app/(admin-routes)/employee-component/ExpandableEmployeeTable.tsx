@@ -134,11 +134,30 @@ const ExpandableEmployeeTable: React.FC = () => {
     return '';
   };
 
-  const formatDate = (date: any): string => {
-    if (!date) return 'N/A';
-    const dateStr = typeof date === 'string' ? date : date.$date;
-    return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-  };
+const formatDate = (date: unknown): string => {
+  if (!date) return 'N/A';
+
+  let dateStr: string;
+
+  if (typeof date === 'string') {
+    dateStr = date;
+  } else if (
+    typeof date === 'object' &&
+    date !== null &&
+    '$date' in date
+  ) {
+    dateStr = (date as { $date: string }).$date;
+  } else {
+    return 'N/A';
+  }
+
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+};
+
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">

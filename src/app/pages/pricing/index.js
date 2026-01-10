@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../../componet/navbar/page';
 import Herosection from './herosection';
 import Pricecards from './pricecards';
-import ScheduleSection from './schedulesection';
+import ScheduleSection from './ScheduleSection';
 import Footer from '../../componet/footer/page'
 
 

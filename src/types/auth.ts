@@ -34,7 +34,7 @@ export interface MenuItem {
     icon?: ReactNode;
     name: string;
     // href?: string | (() => string);
-    href?:any;
+    href?: unknown;
     resource: string;
     actions?: string | string[];
     type?: string;

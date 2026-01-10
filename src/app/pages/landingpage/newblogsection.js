@@ -14,7 +14,7 @@ const Newblogsection = () => {
         
         <div className="p-2 mb-10">
           <h1 className="text-md text-red-600 tracking-wider">OUR BLOG</h1>
-          <p className="text-4xl mt-2 text-white font-bold">What's New?</p>
+          <p className="text-4xl mt-2 text-white font-bold">Whats New?</p>
           <div className="w-full h-[2px] mx-auto bg-gradient-to-r from-black to-red-800 mt-4"></div>
         </div>
 
