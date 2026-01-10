@@ -55,7 +55,7 @@ export default function AdminChat() {
 
   useEffect(() => {
     if (!token) return;
-    const socket = io("http://localhost:5000");
+    const socket = io("https://auto-car-backend.vercel.app");
     socketRef.current = socket;
 
     socket.on("receive_message", (msg) => {
@@ -75,10 +75,9 @@ export default function AdminChat() {
       socketRef.current.emit("join_room", selectedUser._id);
     }
   }, [selectedUser]);
-
   const fetchUsers = async (authToken) => {
     try {
-      const res = await axios.get("http://localhost:5000/api/chat/messages", {
+      const res = await axios.get("https://auto-car-backend.vercel.app/api/chat/messages", {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       setUsers(res.data.users || []);
@@ -103,7 +102,7 @@ export default function AdminChat() {
     setSelectedUser(user);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/chat/admin/messages/${userId}`,
+        `https://auto-car-backend.vercel.app/api/chat/admin/messages/${userId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMessages(res.data.messages || []);
@@ -131,7 +130,7 @@ export default function AdminChat() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/chat/sendmessages",
+        "https://auto-car-backend.vercel.app/api/chat/sendmessages",
         { message: msgData.message, receiverId: selectedUser._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -9,7 +9,7 @@ const fetchEmployeeById = async (id) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:5000/api/employee/${id}`,
+      `https://auto-car-backend.vercel.app/api/employee/${id}`,
       {
         method: "GET",
         headers: {

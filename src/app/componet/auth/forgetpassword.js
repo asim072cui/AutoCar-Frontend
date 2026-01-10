@@ -33,7 +33,7 @@ export default function ForgotPasswordModal({ show, onClose, onSwitchToLogin }) 
     const loadingToast = toast.loading("Sending OTP...");
 
     try {
-      await axios.post("http://localhost:5000/api/auth/request-password-reset", { email });
+      await axios.post("https://auto-car-backend.vercel.app/api/auth/request-password-reset", { email });
 
       toast.success(`OTP sent to ${email}`, { id: loadingToast }, {
         duration: 4000,
@@ -69,7 +69,7 @@ export default function ForgotPasswordModal({ show, onClose, onSwitchToLogin }) 
     const loadingToast = toast.loading("Verifying OTP and resetting password...");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/reset-password", {
+      const response = await axios.post("https://auto-car-backend.vercel.app/api/auth/reset-password", {
         email,
         otp,
         newPassword,

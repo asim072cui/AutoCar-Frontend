@@ -143,7 +143,7 @@ const Navbar = () => {
       formData.append("file", file);
 
       const response = await axios.post(
-        "http://localhost:5000/api/upload/load",
+        "https://auto-car-backend.vercel.app/api/upload/load",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

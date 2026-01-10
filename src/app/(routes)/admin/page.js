@@ -45,7 +45,7 @@ const AdminPage = () => {
 
     const load = async () => {
       const res = await fetch(
-        "http://localhost:5000/api/comments/getcomments"
+        "https://auto-car-backend.vercel.app/api/comments/getcomments"
       );
       const data = await res.json();
       setComments(data.comments || []);
@@ -58,7 +58,7 @@ const AdminPage = () => {
 
     const load = async () => {
       const res = await fetch(
-        "http://localhost:5000/api/appointments/getappointments"
+        "https://auto-car-backend.vercel.app/api/appointments/getappointments"
       );
       const data = await res.json();
       setAppointments(Array.isArray(data) ? data : data.appointments || []);
@@ -73,7 +73,7 @@ const AdminPage = () => {
         const storedUser = JSON.parse(localStorage.getItem("user"));
         const token = storedUser?.token;
 
-        const res = await fetch("http://localhost:5000/api/admin/users", {
+        const res = await fetch("https://auto-car-backend.vercel.app/api/admin/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -102,15 +102,15 @@ const AdminPage = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    fetch("http://localhost:5000/api/comments/getcomments", headers)
+    fetch("https://auto-car-backend.vercel.app/api/comments/getcomments", headers)
       .then((r) => r.json())
       .then((d) => settotalcomments(d.comments?.length || 0));
 
-    fetch("http://localhost:5000/api/appointments/getappointments", headers)
+    fetch("https://auto-car-backend.vercel.app/api/appointments/getappointments", headers)
       .then((r) => r.json())
       .then((d) => settotalappointments(d.appointments?.length || 0));
 
-    fetch("http://localhost:5000/api/admin/users", headers)
+    fetch("https://auto-car-backend.vercel.app/api/admin/users", headers)
       .then((r) => r.json())
       .then((d) => settotalusers(d.users?.length || 0));
   }, [mounted]);
@@ -126,17 +126,17 @@ const AdminPage = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    const fetchUsers = fetch("http://localhost:5000/api/admin/users", headers).then((r) =>
+    const fetchUsers = fetch("https://auto-car-backend.vercel.app/api/admin/users", headers).then((r) =>
       r.json()
     );
 
     const fetchAppointments = fetch(
-      "http://localhost:5000/api/appointments/getappointments",
+      "https://auto-car-backend.vercel.app/api/appointments/getappointments",
       headers
     ).then((r) => r.json());
 
     const fetchComments = fetch(
-      "http://localhost:5000/api/comments/getcomments",
+      "https://auto-car-backend.vercel.app/api/comments/getcomments",
       headers
     ).then((r) => r.json());
 

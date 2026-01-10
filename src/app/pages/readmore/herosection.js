@@ -31,7 +31,7 @@ const Herosection = () => {
 
   const fetchComments = async () => {
     try{
-      const res = await axios.get('http://localhost:5000/api/comments/getcomments');
+      const res = await axios.get('https://auto-car-backend.vercel.app/api/comments/getcomments');
       setComments(res.data.comments);
 
     }catch(error) {
@@ -114,7 +114,7 @@ const handleSubmit = async (e) => {
 
     
     const response = await axios.post(
-      "http://localhost:5000/api/comments/createcomment",
+      "https://auto-car-backend.vercel.app/api/comments/createcomment",
       { comment: formData.comment }, 
       {
         headers: {

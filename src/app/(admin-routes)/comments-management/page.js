@@ -20,7 +20,7 @@ const AdminCommentsPage = () => {
         setError("");
 
         const res = await fetch(
-          "http://localhost:5000/api/comments/getcomments",
+          "https://auto-car-backend.vercel.app/api/comments/getcomments",
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },

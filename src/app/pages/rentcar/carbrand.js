@@ -18,7 +18,7 @@ const ServicesSection = () => {
   const [showAllRent, setShowAllRent] = useState(false);
   const [showAllBuy, setShowAllBuy] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/api/cars/all")
+    fetch("https://auto-car-backend.vercel.app/api/cars/all")
       .then(res => res.json())
       .then(data => {
         const carsData = Array.isArray(data) ? data : (data.cars || []);

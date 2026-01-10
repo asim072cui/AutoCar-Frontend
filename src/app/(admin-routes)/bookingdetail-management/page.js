@@ -21,7 +21,7 @@ const BookingDetailManagement = () => {
         // const token = JSON.parse(localStorage.getItem("admin"))?.token;
         const token = JSON.parse(localStorage.getItem("admin"))?.token;
         
-        const response = await fetch("http://localhost:5000/api/bookings/all-bookings", {
+        const response = await fetch("https://auto-car-backend.vercel.app/api/bookings/all-bookings", {
           headers: {
             "Authorization": `Bearer ${token}`,
           },
@@ -111,7 +111,7 @@ const handleStatusChange = async (bookingId, newStatus) => {
     const token = JSON.parse(localStorage.getItem("admin"))?.token;
 
     const response = await fetch(
-      `http://localhost:5000/api/bookings/status/${bookingId}`,
+      `https://auto-car-backend.vercel.app/api/bookings/status/${bookingId}`,
       {
         method: "PUT",
         headers: {

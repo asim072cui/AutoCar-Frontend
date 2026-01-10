@@ -24,7 +24,7 @@ const UsersTable = () => {
 
         const token = storedUser?.token;
 
-        const res = await fetch("http://localhost:5000/api/admin/users", {
+        const res = await fetch("https://auto-car-backend.vercel.app/api/admin/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

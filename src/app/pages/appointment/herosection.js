@@ -73,7 +73,7 @@ const handleCarDetails = (e) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/appointments/create",
+        "https://auto-car-backend.vercel.app/api/appointments/create",
         payload
       );
 

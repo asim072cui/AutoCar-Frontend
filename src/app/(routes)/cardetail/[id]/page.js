@@ -51,7 +51,7 @@ const CarDetail = () => {
 useEffect(() => {
   const fetchReviews = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/carcomments/${carId}`);
+      const res = await fetch(`https://auto-car-backend.vercel.app/api/carcomments/${carId}`);
       const data = await res.json();
       setCustomerReviews(data.carcomments || 0); // your controller returns comments
     } catch (err) {
@@ -64,7 +64,7 @@ useEffect(() => {
 
 const handleSubmitReview = async () => {
   try {
-    const res = await fetch('http://localhost:5000/api/carcomments/createcomment', {
+    const res = await fetch('https://auto-car-backend.vercel.app/api/carcomments/createcomment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const handleBookingSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:5000/api/bookings/createbooking", {
+    const res = await fetch("https://auto-car-backend.vercel.app/api/bookings/createbooking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -148,10 +148,10 @@ useEffect(() => {
   const fetchSimilarCars = async () => {
     try {
       setLoading(true);
-      const carRes = await fetch(`http://localhost:5000/api/cars/${id}`);
+      const carRes = await fetch(`https://auto-car-backend.vercel.app/api/cars/${id}`);
       const carJson = await carRes.json();
        setCarData(carJson.car);
-       const res = await fetch(`http://localhost:5000/api/cars/similar/${id}`);
+       const res = await fetch(`https://auto-car-backend.vercel.app/api/cars/similar/${id}`);
       const data = await res.json();
 
       // backend response: { message, getSimilarCars }
@@ -171,7 +171,7 @@ useEffect(() => {
 
     const fetchCar = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/cars/${carId}`);
+        const res = await fetch(`https://auto-car-backend.vercel.app/api/cars/${carId}`);
         const data = await res.json();
         if (res.ok) {
           setCarData(data.car);

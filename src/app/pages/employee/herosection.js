@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const fetchEmployeeApplicationsByEmail = async (email) => {
   try {
     const response = await fetch(
-      `http://localhost:5000/api/employee/employee-records?email=${encodeURIComponent(
+      `https://auto-car-backend.vercel.app/api/employee/employee-records?email=${encodeURIComponent(
         email
       )}`,
       {

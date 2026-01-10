@@ -21,7 +21,7 @@ const AdminPage = () => {
         console.error("No token found in localStorage");
         return;
       }
-     const response = await fetch("http://localhost:5000/api/admin/users", {
+     const response = await fetch("https://auto-car-backend.vercel.app/api/admin/users", {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -47,7 +47,7 @@ const AdminPage = () => {
       const storedUser = JSON.parse(localStorage.getItem("user"));
       const token = storedUser?.token;
 
-      const res = await fetch("http://localhost:5000/api/admin/stats", {
+      const res = await fetch("https://auto-car-backend.vercel.app/api/admin/stats", {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,

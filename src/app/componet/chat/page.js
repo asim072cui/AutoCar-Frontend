@@ -27,7 +27,7 @@ export default function UserChat() {
       const savedUser = JSON.parse(localStorage.getItem("user"));
       setUser(savedUser);
 
-      socket = io("http://localhost:5000");
+      socket = io("https://auto-car-backend.vercel.app");
       socket.emit("join_room", savedUser._id);
 
       socket.on("receive_message", (msg) => {
@@ -51,7 +51,7 @@ export default function UserChat() {
       if (!token) return;
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/chat/admin/messages/${userId}`,
+          `https://auto-car-backend.vercel.app/api/chat/admin/messages/${userId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -80,7 +80,7 @@ const sendMessage = async () => {
   try {
     // Save to DB
     await axios.post(
-      "http://localhost:5000/api/chat/sendmessages",
+      "https://auto-car-backend.vercel.app/api/chat/sendmessages",
       { message: msgData.message },
       { headers: { Authorization: `Bearer ${user.token}` } }
     );

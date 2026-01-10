@@ -45,7 +45,7 @@ const AddCarModal = ({ open, onClose, onCreated }) => {
         console.log("⬆️ Uploading file:", file.name);
 
         const res = await fetch(
-          "http://localhost:5000/api/upload/load",
+          "https://auto-car-backend.vercel.app/api/upload/load",
           {
             method: "POST",
             body: fd,
@@ -121,7 +121,7 @@ const AddCarModal = ({ open, onClose, onCreated }) => {
 
       console.log("Sending car data:", carData);
 
-      const res = await fetch("http://localhost:5000/api/cars/create", {
+      const res = await fetch("https://auto-car-backend.vercel.app/api/cars/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

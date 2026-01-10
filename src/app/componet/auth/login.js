@@ -30,7 +30,7 @@ const handleLogin = async (e) => {
   });
 
   try {
-    const response = await axios.post("http://localhost:5000/api/auth/login", {
+    const response = await axios.post("https://auto-car-backend.vercel.app/api/auth/login", {
       email,
       password,
     });
@@ -113,7 +113,7 @@ const handleLogin = async (e) => {
         {/* Social Buttons */}
         <div className="space-y-3">
           <button
-          onClick={() => window.location.href = "http://localhost:5000/api/auth/google"}
+          onClick={() => window.location.href = "https://auto-car-backend.vercel.app/api/auth/google"}
             className="flex items-center justify-center w-full border border-gray-300 rounded-full py-2 hover:bg-gray-100"
           >
             <FcGoogle className="text-xl mr-2" />

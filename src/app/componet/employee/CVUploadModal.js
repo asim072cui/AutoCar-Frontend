@@ -139,7 +139,7 @@ const handleUpload = async () => {
 
     // ✅ Make API request
     const response = await axios.post(
-      'http://localhost:5000/api/employee/create-employee',
+      'https://auto-car-backend.vercel.app/api/employee/create-employee',
       formData,
       {
         headers: {

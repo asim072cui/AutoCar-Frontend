@@ -71,7 +71,7 @@ const Step4Summary = () => {
         formData.append('description', exp.description || '');
       }
 
-      const response = await axios.post('http://localhost:5000/api/employee/create-employee', formData, {
+      const response = await axios.post('https://auto-car-backend.vercel.app/api/employee/create-employee', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

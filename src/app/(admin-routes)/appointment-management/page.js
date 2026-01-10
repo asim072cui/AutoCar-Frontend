@@ -18,7 +18,7 @@ const AppointmentAdminPage = () => {
         setError("");
 
         const res = await fetch(
-          "http://localhost:5000/api/appointments/getappointments",
+          "https://auto-car-backend.vercel.app/api/appointments/getappointments",
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },
@@ -48,9 +48,9 @@ const AppointmentAdminPage = () => {
   const updateStatus = async (_id, status) => {
     try {
       const endpointMap = {
-        Approved: `http://localhost:5000/api/appointments/approve/${_id}`,
-        Completed: `http://localhost:5000/api/appointments/complete/${_id}`,
-        Cancelled: `http://localhost:5000/api/appointments/cancel/${_id}`,
+        Approved: `https://auto-car-backend.vercel.app/api/appointments/approve/${_id}`,
+        Completed: `https://auto-car-backend.vercel.app/api/appointments/complete/${_id}`,
+        Cancelled: `https://auto-car-backend.vercel.app/api/appointments/cancel/${_id}`,
       };
 
       const url = endpointMap[status];

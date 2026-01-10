@@ -10,7 +10,7 @@ export default function MyBookings() {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/bookings/my-bookings", {
+        const res = await axios.get("https://auto-car-backend.vercel.app/api/bookings/my-bookings", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

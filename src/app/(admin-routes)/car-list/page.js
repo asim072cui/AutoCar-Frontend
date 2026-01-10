@@ -17,7 +17,7 @@ const CarListPage = () => {
     const fetchCars = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5000/api/cars/all");
+        const response = await fetch("https://auto-car-backend.vercel.app/api/cars/all");
         const data = await response.json();
 
         console.log("Fetched cars check this response:", data);
@@ -38,7 +38,7 @@ const CarListPage = () => {
   const createcar = async (carData) => {
     try{
         const token = JSON.parse(localStorage.getItem("admin"))?.token;
-        const response = await fetch("http://localhost:5000/api/cars/create", {
+        const response = await fetch("https://auto-car-backend.vercel.app/api/cars/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
