@@ -20,9 +20,9 @@ const nextConfig : NextConfig = {
       'images.pexels.com',  // for owner avatars or other images
     ],
   },
-    eslint: {
-    ignoreDuringBuilds: true,
-  },
+  //   eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
 }
 
 
